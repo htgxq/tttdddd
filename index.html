@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="renderer" content="webkit">
+    <meta name="format-detection" content="telephone=no">
+	<title>TD-首页</title>
+	<meta name="keywords" content="#"/>
+	<meta name="description" content="#"/>
+    <meta name="keywords" content="">
+	<link href="http://ae85.cn/skin/css/style.css" rel="stylesheet" type="text/css" />
+    <script src="http://ae85.cn/skin/js/baidu.js"></script>
+	<link rel="stylesheet" href="http://ae85.cn/skin/css/menes.min.css">
+	<script src="http://ae85.cn/skin/js/menes.js" type="text/javascript"></script>
+	<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script> 
+</head>
+</style>
+</head>
+<body>
+<div id="max_box">
+	<div class="logo animated fadeInUp">
+		<span>官网</span>
+		<img src="https://i.loli.net/2018/07/23/5b555edebc809.jpeg" alt="logo">
+<body oncontextmenu="return false" onselectstart="return false">
+</div>
+	<!-- 原始颜色#5A614A -->
+<style type="text/css">
+a:visited {
+	color: #ffffff; text-decoration: none
+}
+a:link {
+	color: #ffffff; text-decoration: none
+}
+a:hover {
+	color: #004eff; text-decoration: none
+}
+</style>
+<script language="javascript"> 
+<!-- 
+// ------ 定义全局变量 
+       var theNewsNum; 
+    var theAddNum; 
+    var totalNum; 
+    var CurrentPosion=0; 
+       var theCurrentNews; 
+       var theCurrentLength; 
+       var theNewsText; 
+       var theTargetLink; 
+       var theCharacterTimeout; 
+       var theNewsTimeout; 
+       var theBrowserVersion; 
+       var theWidgetOne; 
+       var theWidgetTwo; 
+       var theSpaceFiller; 
+       var theLeadString; 
+       var theNewsState; 
+       function startTicker() 
+       {                
+// ------ 设置初始数值 
+          theCharacterTimeout = 50;//字符间隔时间 
+          theNewsTimeout     = 3000;//新闻间隔时间 
+          theWidgetOne        =  "_";//新闻前面下标符1 
+          theWidgetTwo        =  "-";//新闻前面下标符 
+          theNewsState       = 1; 
+          //theNewsNum        = document.body.children.incoming.children.NewsNum.innerText;//新闻总条数 
+          //add by lin 
+     theNewsNum        = document.getElementById("incoming").children.AllNews.children.length;//新闻总条数 
+     theAddNum        = document.getElementById("incoming").children.AddNews.children.length;//补充条数 
+     totalNum   =theNewsNum+theAddNum; 
+     theCurrentNews     = 0; 
+          theCurrentLength    = 0; 
+          theLeadString       = " "; 
+          theSpaceFiller      = " "; 
+          runTheTicker(); 
+       } 
+// --- 基础函数 
+       function runTheTicker() 
+       { 
+          if(theNewsState == 1) 
+          { 
+            if(CurrentPosion<theNewsNum){  
+          setupNextNews(); 
+            } 
+      else{ 
+          setupAddNews(); 
+      } 
+      CurrentPosion++; 
+      if(CurrentPosion>=totalNum||CurrentPosion>=5) CurrentPosion=0;  //最多条数不超过5条 
+     } 
+          if(theCurrentLength != theNewsText.length) 
+          { 
+             drawNews(); 
+          } 
+          else 
+          { 
+             closeOutNews(); 
+          } 
+       } 
+// --- 跳转下一条新闻 
+       function setupNextNews() 
+       { 
+          theNewsState = 0; 
+     theCurrentNews = theCurrentNews % theNewsNum;      
+          theNewsText = document.getElementById("AllNews").children[theCurrentNews].children.Summary.innerText; 
+          theTargetLink = document.getElementById("AllNews").children[theCurrentNews].children.NewsLink.innerText;           
+          theCurrentLength = 0; 
+          document.all.hottext.href = theTargetLink; 
+          theCurrentNews++; 
+    } 
+       function setupAddNews() 
+       { 
+          theNewsState = 0; 
+     theCurrentNews = theCurrentNews % theAddNum;      
+          theNewsText = document.getElementById("incoming").children.AddNews.children
+[theCurrentNews].children.Summary.innerText; 
+          theTargetLink = document.getElementById("incoming").children.AddNews.children
+[theCurrentNews].children.NewsLink.innerText;           
+          theCurrentLength = 0; 
+          document.all.hottext.href = theTargetLink; 
+          theCurrentNews++; 
+    }     
+// --- 滚动新闻 
+       function drawNews() 
+       { 
+          var myWidget;        
+          if((theCurrentLength % 2) == 1) 
+          { 
+             myWidget = theWidgetOne; 
+          } 
+          else 
+          { 
+             myWidget = theWidgetTwo; 
+          } 
+          document.all.hottext.innerHTML = theLeadString + theNewsText.substring(0,theCurrentLength) + myWidget + 
+theSpaceFiller; 
+          theCurrentLength++; 
+          setTimeout("runTheTicker()", theCharacterTimeout); 
+       } 
+// --- 结束新闻循环 
+       function closeOutNews() 
+       { 
+          document.all.hottext.innerHTML = theLeadString + theNewsText + theSpaceFiller; 
+          theNewsState = 1; 
+          setTimeout("runTheTicker()", theNewsTimeout); 
+       }       
+window.onload=startTicker;         
+//--> 
+</script> 
+<!-- 一种文字颜色渐变效果的超级连接特效 --> 
+<script> 
+<!-- 
+document.onmouseover = domouseover; 
+document.onmouseout = domouseout; 
+function domouseover() { 
+  if(document.all){ 
+  srcElement = window.event.srcElement; 
+  if (srcElement.className.indexOf("fade") > -1) { 
+        var linkName = srcElement.name; 
+      fadein(linkName); 
+      } 
+      } 
+} 
+function domouseout() { 
+  if (document.all){ 
+  srcElement = window.event.srcElement; 
+  if (srcElement.className.indexOf("fade") > -1) { 
+        var linkName = srcElement.name; 
+      fadeout(linkName); 
+      } 
+      } 
+} 
+function makearray(n) { 
+    this.length = n; 
+    for(var i = 1; i <= n; i++) 
+        this[i] = 0; 
+    return this; 
+} 
+hexa = new makearray(16); 
+for(var i = 0; i < 10; i++) 
+    hexa[i] = i; 
+hexa[10]="a"; hexa[11]="b"; hexa[12]="c"; 
+hexa[13]="d"; hexa[14]="e"; hexa[15]="f"; 
+function hex(i) { 
+    if (i < 0) 
+        return "00"; 
+    else if (i > 255) 
+        return "ff"; 
+    else 
+       return "" + hexa[Math.floor(i/16)] + hexa[i%16];} 
+function setbgColor(r, g, b, element) { 
+      var hr = hex(r); var hg = hex(g); var hb = hex(b); 
+      element.style.color = "#"+hr+hg+hb; 
+} 
+function fade(sr, sg, sb, er, eg, eb, step, direction, element){
+	for(var i = 0; i <= step; i++){
+		setTimeout("setbgColor(Math.floor(" +sr+ " *(( " +step+ " - " +i+ " )/ " +step+ " ) + " +er+ " * (" +i+ "/" +step+ ")),Math.floor(" +sg+ " * (( " +step+ " - " +i+ " )/ " +step+ " ) + " +eg+ " * (" +i+ "/" +step+ ")),Math.floor(" +sb+ " *((" +step+ "-" +i+ ")/" +step+ ") + " +eb+ " * (" +i+ "/" +step+ ")),"+element+");",i*step); 
+	}
+}
+function fadeout(element) { 
+           
+    fade(255,153,0, 0,0,0, 30, 1, element); 
+} 
+/*------------------=[fadein]=---------------------- 
+||Fades the text from one color to another color   || 
+||when the mouse moves over the link.              || 
+||-------------------------------------------------*/ 
+function fadein(element) { 
+    fade(0,0,0, 255,153,0, 18, 1, element); 
+} 
+/*ignore this >>>>*/ 
+function fadeIn2(id){ 
+    fade(255,255,255, 88,118,152, 25, 1, id); 
+} 
+function fadeOut2(id){ 
+    fade(88,118,152, 255,255,255, 29, 1, id); 
+} 
+/*<<<<< stop ignoring =)*/ 
+// --> 
+</script> 
+<div id="visible" class="ad_box animated fadeInUp">
+<font style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" color="#FF0000">◄〉公告：<a class="fade" id="hottext" href="http://tdtd.coding.me/index.html/" target="_blank" name="a"></a></font></div>
+<div id="incoming" style="display: none;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;" class="animated fadeInUp">
+<div id="AllNews">
+<div id="1">
+<div id="Summary">①、点击这里找回微信支付密码（需要复制连接在微信打开）</div>
+<div id="NewsLink">https://pay.weixin.qq.com/userweb/newuserauthcheck?appid=wx57849631bb367f52#/reset </div></div>
+<div id="2">
+<div id="Summary">②、地图中心也在更新</div>
+<div id="NewsLink">/dt</div></div>
+<div id="3">
+<div id="Summary">③、增加TD商城</div>
+<div id="NewsLink">#</div></div>
+<div id="4">
+<div id="Summary">④、TD更新捷径啦！</div>
+<div id="NewsLink">#</div></div>
+<div id="5">
+<div id="Summary">⑤、TD一周年了！</div>
+<div id="NewsLink">#</div></div></div>
+<div id="AddNews"></div></div>
+	<panel class="ad_box animated fadeInUp">
+		<div class="pic-box">
+			<ul>
+				<li id="fuck5h"><a href="/dt" target="new"><img id="fuck5hous" class="bigpic" src="https://i.loli.net/2018/07/23/5b55212b98a40.jpeg" /></a></li>
+				<li id="fuck5h"><a href="https://www.bslyun.com/sby8vre0tLTE5ODM2NC0tMA%3D" target="new"><img class="bigpic" src="https://i.loli.net/2018/07/23/5b55888ced970.jpeg" /></a></li>
+				<li id="fuck5h"><a href="/game" target="new"><img class="bigpic" src="https://i.loli.net/2018/07/23/5b5542d1dca71.jpeg" /></a></li>
+				<li id="fuck5h"><a href="#" target="new"><img class="bigpic" src="https://i.loli.net/2018/07/23/5b55894e61d47.jpeg" /></a></li>
+			</ul>
+		</div>
+	</panel>
+	<script src="http://ae85.cn/skin/js/main.js" type="text/javascript"></script>
+    <div class="ad_box animated fadeInUp">
+        <table>
+        <tbody>
+            <tr>
+            <td><a href="http://v.douyin.com/JKpt4P/"><img src="https://i.loli.net/2018/07/23/5b553c247b1fe.jpeg" alt=""></a></td>
+            <td><a href="https://adl.netease.com/d/g/mc/c/pe"><img src="https://i.loli.net/2018/07/23/5b553e4241b31.jpeg" alt=""></a></td>
+            </tr>
+            <tr>
+            <td class="animated fadeInUp"><a href="https://adl.netease.com/d/g/mc/c/pe"><img src="https://i.loli.net/2018/07/23/5b55400c67baf.jpeg" alt=""></a></td>
+            <td class="animated fadeInUp"><a href="http://td.853260.com"><img src="https://i.loli.net/2018/07/23/5b5568e773d42.jpeg" alt=""></a></td>
+            </tr>
+  <!-- <tr>
+            <td colspan="2"><p><a href="/box/iPhone.html">调试</a></p></td>
+     </tr> 
+ --> 
+ 
+        </tbody>
+        </table>
+	</div>
+    <div class="body_box footer_tb animated fadeInUp ">
+        <table>
+        <tbody>
+            <tr>
+            <td><a href="/dt">地图商城</a></td>
+            <td><a href="/pf">皮肤商城</a></td>
+            </tr>
+            <tr class="animated fadeInUp">
+            <td><a href="http://td.853260.com">TD商店</a></td>
+            <td><a href="/game">TDgames</a></td>
+            </tr>
+            <tr class="animated fadeInUp">
+            <td class="animated fadeInUp"><a href="http://v.douyin.com/JEUvWc/">TD抖音</a></td>
+            <td class="animated fadeInUp"><a href="//fk1.sxl.cn">反馈建议</a></td>
+            </tr>
+        </tbody>
+        </table>
+        </div>
+    <div class="ad_box animated fadeInUp">
+        <table class="animated fadeInUp">
+        <tbody>
+            <tr>
+            <td><span>TD视频</span><a href="#" "_blank"><img src="https://i.loli.net/2018/07/23/5b558386dac19.jpeg" alt=""></a></td>
+            <td><span>TD捷径</span><a href="https://www.icloud.com/shortcuts/e3fe88901cab402ab837a259114d33ff" "_blank"><img src="#" alt=""></a></td>
+            </tr>
+        </tbody>
+        </table>
+	</div>
+	<div class="footer animated fadeInUp">
+		<p><span>TD（2018）唯一官方网站</span></p>
+		<p>版权所有 TD ©2017~2018 <br>
+		<a href="#">- 感谢访问 - TD -</a></p>
+	</div>
+    <br>
+	
+</div>
+<script>
+document.oncontextmenu = function(){
+	return false;
+}
+document.onkeydown = function(){
+	if (event.ctrlKey && window.event.keyCode==67){
+		return false;
+	}
+}
+document.body.oncopy = function (){
+	return false;
+}
+document.onselectstart = function(){
+	return false;
+}
+window.onkeydown = window.onkeyup = window.onkeypress = function (e) {
+	window.event.returnValue = false;
+	console.log('Key:',e.key);
+	return false;
+}
+var h = window.innerHeight,w=window.innerWidth;
+window.onresize = function () {
+	if (h != window.innerHeight||w!=window.innerWidth){
+		window.close();
+		
+	}
+}
+</script>
+</body>
+<meta name="baidu-site-verification" content="ipaJrbaEND" />
+</html>
+
